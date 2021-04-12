@@ -1,24 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Plain_Old_Pasteboard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MpL-21-YX4">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ci0-pi-0zd">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem systemItem="trash" id="i2L-Gp-Yq5">
+                                        <connections>
+                                            <action selector="onTrashPressed:" destination="BYZ-38-t0r" id="ByG-TH-YLj"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ci0-pi-0zd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="D6S-Dh-dTs"/>
+                            <constraint firstItem="Ci0-pi-0zd" firstAttribute="top" secondItem="MpL-21-YX4" secondAttribute="bottom" id="D8f-Fo-szW"/>
+                            <constraint firstItem="MpL-21-YX4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EQw-tm-tmG"/>
+                            <constraint firstItem="Ci0-pi-0zd" firstAttribute="top" secondItem="MpL-21-YX4" secondAttribute="bottom" id="O9b-aQ-1GP"/>
+                            <constraint firstItem="MpL-21-YX4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OT1-Vz-ZOH"/>
+                            <constraint firstItem="Ci0-pi-0zd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UPM-2Y-mzE"/>
+                            <constraint firstItem="Ci0-pi-0zd" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ssv-Fw-hQa"/>
+                            <constraint firstItem="MpL-21-YX4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tJK-1W-RwA"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="MpL-21-YX4" id="nnt-hw-Q4b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140.57971014492756" y="111.83035714285714"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
