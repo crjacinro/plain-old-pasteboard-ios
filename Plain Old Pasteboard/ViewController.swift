@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if let loadedStrings = UserDefaults.standard.stringArray(forKey: DATA_KEY){
             pastedStrings.append(contentsOf: loadedStrings)
         }
@@ -22,8 +23,7 @@ class ViewController: UIViewController {
     }
     
     func addText() {
-        guard let text = UIPasteboard.general.string,
-              !pastedStrings.contains(text) else {
+        guard let text = UIPasteboard.general.string, !pastedStrings.contains(text) else {
             return
         }
         
@@ -44,7 +44,4 @@ class ViewController: UIViewController {
         pastedStrings.removeAll()
         UserDefaults.standard.removeObject(forKey: DATA_KEY)
     }
-    
-
 }
-
